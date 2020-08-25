@@ -1,0 +1,4 @@
+- Able to make custom route to folders.
+- RSS more efficiency.
+- More RRS avalaible
+- HTML to start.
