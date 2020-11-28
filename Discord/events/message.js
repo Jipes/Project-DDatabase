@@ -8,22 +8,23 @@ module.exports = async (client, message) => {
     // Set
     client.config = config;
 
-    // Check Prefix And Bot
+    // Check
     if (!message.content.startsWith(config.prefix) || message.author.bot) return;
 
-    //Splits args and command
+    // Split
     const args = message.content.slice(config.prefix.length).split(' ');
     const commandName = args.shift().toLowerCase();
 
-    //Stores command from the commands folder
+    // Const
     const cmd = client.commands.get(commandName);
 
-    //If command doesnt exist then returns
+    // Check
     if (!cmd) {
     message.channel.send("That's not a command!")
     return
     };
 
+    // Execute
     try {
         cmd.execute(message, args, client);
     } catch (error) {
